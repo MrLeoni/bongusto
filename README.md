@@ -1,28 +1,29 @@
 # Bongusto
-tema em WordPress
+WordPress theme
 
-Criação: [Agência Delucca](http://www.agenciadelucca.com.br)
+Creation: [Agência Delucca](http://www.agenciadelucca.com.br)
 
-Programação: [Leoni Tonet Mella](http://leonimella.com)
-
-<br>
-<br>
-
-### Descrição
-
-Tema desenvolvido para ser utilizado no WordPress. Trata-se de um catálogo online de produtos para a empresa __Bongusto__ onde ela possa mostrar seus produtos.
-É um tema desenvolvido para administração de conteúdo, não de layout. Portanto o layout tem poucas opções de mudanças.
+Programmer: [Leoni Tonet Mella](http://leonimella.com)
 
 <br>
 <br>
 
-### Plugins obrigatórios:
+### Description
 
-* [Advanced Custom Field](https://wordpress.org/plugins/advanced-custom-fields/) - Gerencia diversos campos de conteúdos em páginas e posts dentro do tema
-* [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) - Responsável pelo gerenciamento e envio de formulários no site.
+Theme builded for WordPress. This theme is about a online catalog for __Bongusto__ company, where them can show products, the company it self and any other information about them
+Its a theme for __content__ administration the capabillity for change __layout__ is very limited
+
+<br>
+<br>
+
+### Must Have Plugins:
+##### free plugins
+
+* [Advanced Custom Field](https://wordpress.org/plugins/advanced-custom-fields/) - Manage several fields inside and display them on administration areas.
+* [Contact Form 7](https://wordpress.org/plugins/contact-form-7/) - Take care of the forms of contact in the theme.
 
 <br>
 <br>
 
 #### 0.0.0 - 11/11/2016
-* Tema criado, primeiro commit
+* First Commit!
