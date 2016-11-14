@@ -34,18 +34,31 @@
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
 		
-		<header id="header">
+		<header id="header" class="site-menu">
 			<div class="container">
 				<nav class="main-nav clearfix">
-					<div class="home-link-box">
-						<a href="<?php echo esc_html(home_url("/")); ?>" title="Home"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/img/logo/bongusto-logo-white.png" alt="Bongusto"></a>
+					<div class="nav-logo">
+						<a href="<?php echo esc_html(home_url("/")); ?>" title="Home"><img class="img-block" src="<?php bloginfo("stylesheet_directory"); ?>/assets/img/logo/bongusto-logo-white.png" alt="Bongusto"></a>
 					</div>
-					<div class="nav-links">
-						<ul class="bon-nav-links">
-							
-						</ul>
-					</div>
+					<?php
+						// Site menu arguments
+						$header_args = array(
+							"theme_location"	=> "header",
+							"container"	=> "div",
+							"container_class"	=> "nav-links",
+							"menu_class"	=> "bon-nav-links"
+						);
+						// Calling the function to build the menu with $header_args arguments
+						wp_nav_menu( $header_args );
+					?>
 				</nav>
 			</div>
 		</header>
+		<div class="mobile-btn-box">
+			<button id="js-mobile-btn" class="nav-btn">
+				<span></span>
+				<span></span>
+				<span></span>
+			</button>
+		</div>
 	
