@@ -388,7 +388,7 @@ ul {
 	margin: 5px 15px 5px 5px;
 }
 
-.bon-nav-links ul li:last-child {
+.bon-nav-links li:last-child {
 	margin-right: 0;
 }
 
@@ -415,7 +415,7 @@ ul {
 	background-color: #fff;
 }
 
-.bon-section-title {
+.bon-section-header {
 	padding: 0 0 4.5%;
 	border-bottom: 1px solid #d89966;
 	margin: 0 0 4.5%;
@@ -423,19 +423,19 @@ ul {
 	color: #d89966;
 }
 
-.bon-section-title.white {
+.bon-section-header.white {
 	color: #fff;
 	border-color: #fff!important;
 }
 
-.bon-section-title.center {
+.bon-section-header.center {
 	padding: 2% 0;
 	border: 0;
 	margin: 2% 0;
 	text-align: center;
 }
 
-.bon-section-title.center.border {
+.bon-section-header.center.border {
 	padding: 0 0 4.5%;
 	border-bottom: 1px solid #d89966;
 }

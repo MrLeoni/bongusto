@@ -33,4 +33,19 @@
 
 <body <?php body_class(); ?>>
 	<div id="page" class="site">
+		
+		<header id="header">
+			<div class="container">
+				<nav class="main-nav clearfix">
+					<div class="home-link-box">
+						<a href="<?php echo esc_html(home_url("/")); ?>" title="Home"><img src="<?php bloginfo("stylesheet_directory"); ?>/assets/img/logo/bongusto-logo-white.png" alt="Bongusto"></a>
+					</div>
+					<div class="nav-links">
+						<ul class="bon-nav-links">
+							
+						</ul>
+					</div>
+				</nav>
+			</div>
+		</header>
 	
