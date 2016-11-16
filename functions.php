@@ -139,3 +139,41 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+
+/**
+ * Register "footer" custom post type with "Categoria" custom taxonomy
+ */
+add_action("init", "footerPostType");
+function footerPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Conteúdo Footer",
+		"singular_name" => "Conteúdo Footer",
+		
+	);
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 21,
+		"menu_icon" => "dashicons-media-default",
+		"public"	=> true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("footer", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array( "name" => "Categorias do Footer", "singular_name" => "Categoria do Footer");
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("footer-categorias", "footer", $args_taxonomy);
+	
+}

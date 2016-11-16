@@ -8,9 +8,85 @@
  *
  * @package Bongusto
  */
+ 
+// Querying content for newsletter section
+$news_args = array(
+	"post_type"	=> "footer",
+	"order_by"	=> "modified",
+	"posts_per_page"	=> 99,
+	"tax_query"	=> array(array(
+			"taxonomy"	=> "footer-categorias",
+			"field"	=> "slug",
+			"terms"	=> "newsletter"
+		))
+);
+$news_query = new WP_Query( $news_args );
+ 
+// Querying content for menu and address section
+$address_args = array(
+	"post_type"	=> "footer",
+	"order_by"	=> "modified",
+	"posts_per_page"	=> 99,
+	"tax_query"	=> array(array(
+			"taxonomy"	=> "footer-categorias",
+			"field"	=> "slug",
+			"terms"	=> "endereco"
+		))
+);
+$address_query = new WP_Query( $address_args );
 
 ?>
 
+	<footer id="footer" class="site-footer">
+		<div class="container">
+			
+			<section class="footer-content-top">
+				<div class="row">
+					<div class="col-md-12">
+						<?php
+							while($news_query->have_posts()): $news_query->the_post();
+								the_content();
+							endwhile;
+							wp_reset_postdata()
+						?>
+					</div>
+				</div>
+			</section>
+			
+			<section class="footer-content-middle">
+				<div class="row">
+					<div class="col-md-6">
+						<?php
+							// Footer menu arguments
+							$footer_args = array(
+								"theme_location"	=> "footer",
+								"container"	=> "nav",
+								"container_class"	=> "footer-links clearfix",
+								"menu_class"	=> "bon-nav-links"
+							);
+							// Calling the function to build the menu with $footer_args arguments
+							wp_nav_menu( $footer_args );
+						?>
+					</div>
+					<div class="col-md-6">
+						<div class="footer-address">
+							<?php
+								while($address_query->have_posts()): $address_query->the_post();
+									the_content();
+								endwhile;
+								wp_reset_postdata()
+							?>
+						</div>
+					</div>
+				</div>
+			</section>
+			
+			<section class="footer-content-bottom copy">
+				<p>Bongusto | Todos os direitos reservados <span><a href="http://www.agenciadelucca.com.br" target="_blank" title="Agência Delucca">Agência Delucca</a></span></p>
+			</section>
+			
+		</div>
+	</footer>
 
 	</div><!-- #page -->
 

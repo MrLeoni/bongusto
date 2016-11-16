@@ -455,6 +455,26 @@ ul {
 }
 
 /*-------------------------------------
+5.X Form Input
+-------------------------------------*/
+
+.bon-form {
+	display: block;
+	width: 100%;
+	padding: 9px;
+	border: 1px solid #d89966;
+	border-radius: 5px;
+	margin: 0 0 30px;
+	background-color: #fff;
+	color: #222;
+}
+
+.bon-form:focus {
+	outline: none;
+	border-color: #e31d1a!important;
+}
+
+/*-------------------------------------
 5.X Header
 -------------------------------------*/
 
@@ -468,7 +488,7 @@ ul {
 	z-index: 99999;
 	-webkit-transition: 0.2s ease;
 	transition: 0.2s ease;
-	overflow: hidden;
+	overflow-y: auto;
 }
 
 .nav-logo {
@@ -484,6 +504,10 @@ ul {
 	margin: 4px 0 0 ;
 	float: right;
 	text-align: right;
+}
+
+.bon-nav-links {
+	opacity: 1;
 }
 
 .bon-nav-links li:after {
@@ -509,10 +533,9 @@ ul {
 .mobile-btn-box {
 	display: none;
 	position: fixed;
-	top: 20px;
-	right: 20px;
-	z-index: 99999;
-	background-color: rgba(0, 0, 0, 0.9);
+  top: 35px;
+  right: 20px;
+	background-color: transparent;
 }
 
 .nav-btn {
@@ -521,9 +544,10 @@ ul {
 	height: auto;
 	padding: 8px 5px;
 	border: 0;
+	float: right;
+	position: relative;
 	background-color: transparent;
 	box-shadow: none;
-	position: relative;
 	-webkit-transition: 0.2s ease;
 	transition: 0.2s ease;
 }
@@ -572,6 +596,122 @@ ul {
 }
 
 /*-------------------------------------
+5.X Footer
+-------------------------------------*/
+
+.site-footer {
+	background-color: #000;
+}
+
+.footer-content-top {
+	padding: 2% 5px 0;
+}
+
+.news-box {
+	margin: 0;
+}
+
+.news-box .bon-form {
+	width: 85%;
+	border-color: transparent;
+	border-radius: 5px 0 0 5px;
+	margin: 0;
+	float: left;
+}
+
+.news-box .bon-form.news-submit {
+	width: 15%;
+	border-radius: 0 5px 5px 0;
+	background-color: #e31d1a;
+	color: #fff;
+	font-weight: 700;
+	-webkit-transition: 0.2s ease;
+	transition: 0.2s ease;
+}
+
+.news-box .news-submit:hover,
+.news-box .news-submit:focus,
+.news-box .news-submit:active {
+	background-color: #d89966;
+	outline: none;
+}
+
+.footer-content-middle {
+	padding: 3% 0;
+	border-top: 1px solid #e31d1a;
+	border-bottom: 1px solid #e31d1a;
+	margin: 2% 0;
+}
+
+.footer-links {
+	margin: 0;
+}
+
+.footer-content-middle li:before {
+	content: "• ";
+	color: #fff;
+}
+
+.footer-content-middle li.current-menu-item:before {
+	content: "";
+}
+
+.footer-content-middle li {
+  display: block;
+  width: 33.3333%;
+  padding: 2px 10px 2px;
+  float: left;
+}
+
+.footer-content-middle li:after {
+	display: none;
+}
+
+.footer-content-middle .footer-links a:link,
+.footer-content-middle .footer-links a:visited {
+	padding: 5px 10px 5px 2px;
+}
+
+.footer-address {
+	margin: 10px 0 0;
+	line-height: 27px;
+	color: #fff;
+}
+
+.footer-address i {
+	font-size: 1.4em;
+	margin-right: 8px;
+}
+
+.footer-content-bottom {
+	padding: 0 5px 2%;
+	font-size: 0.9em;
+}
+
+.copy span {
+	float: right;
+}
+
+.copy a:link,
+.copy a:visited {
+	display: block;
+	width: 24px;
+	height: 18px;
+	overflow: hidden;
+	text-indent: 9999px;
+	background: url(assets/img/logo/logo-delucca.png) no-repeat;
+	background-size: cover;
+	background-position: center top;
+	-webkit-transition: 0.1s;
+	transition: 0.1s;
+}
+
+.copy a:hover,
+.copy a:active {
+	background-position: center bottom;
+}
+
+/*-------------------------------------
 5.X Queries
 -------------------------------------*/
 
@@ -579,16 +719,49 @@ ul {
 	
 	/* Header */
 	
-	.nav-logo {
-		margin: 0 auto;
-		float: none;
-	}
+	.site-menu {
+    position: fixed;
+  }
 	
 	.nav-links {
-		width: 90%;
-		margin: 4% auto 0 ;
-		float: none;
+		display: none;
+		width: 100%;
+		margin: 8% auto 2%;
 		text-align: center;
+	}
+	
+	.mobile-btn-box {
+		display: block;
+	}
+	
+	.nav-logo {
+		width: 200px;
+	}
+	
+	.bon-nav-links {
+		opacity: 0;
+	}
+	
+	.bon-nav-links li {
+    display: block;
+	}
+	
+	.bon-nav-links li:after {
+		display: none;
+	}
+	
+	/* Footer */
+	
+	.news-box {
+		margin: 5% 0 0;
+	}
+	
+	.footer-content-middle .bon-nav-links {
+		opacity: 1;
+	}
+	
+	.footer-links {
+		margin: 0 0 30px;
 	}
 	
 }
@@ -598,34 +771,35 @@ ul {
 	/* Header */
 	
 	.site-menu {
-    width: 240px;
-    position: fixed;
-    bottom: 0;
-    left: -260px;
-    right: auto;
-    background-color: rgba(0,0,0,0.9);
-    overflow: auto;
-	}
-	
-	.mobile-btn-box {
-		display: block;
-	}
+    padding: 10px 0;
+  }
 	
 	.nav-logo {
 		width: 200px;
-		margin: 15% auto 0;
 	}
 	
-	.nav-links {
-    margin: 30% auto 0;
+	.mobile-btn-box {
+    top: 20px;
 	}
 	
-	.bon-nav-links li {
-    display: block;
+}
+
+@media (max-width: 460px) {
+	
+	/* Setup */
+	
+	body {
+		font-size: 12px;
 	}
 	
-	.bon-nav-links li:after {
-		display: none;
+	/* Footer */
+	
+	.footer-content-middle li {
+    width: 50%;
+	}
+	
+	.footer-address {
+    text-align: center;
 	}
 	
 }

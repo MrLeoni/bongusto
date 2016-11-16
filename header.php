@@ -51,14 +51,14 @@
 						// Calling the function to build the menu with $header_args arguments
 						wp_nav_menu( $header_args );
 					?>
+					<div class="mobile-btn-box">
+						<button id="js-mobile-btn" class="nav-btn">
+							<span></span>
+							<span></span>
+							<span></span>
+						</button>
+					</div>
 				</nav>
 			</div>
 		</header>
-		<div class="mobile-btn-box">
-			<button id="js-mobile-btn" class="nav-btn">
-				<span></span>
-				<span></span>
-				<span></span>
-			</button>
-		</div>
 	
