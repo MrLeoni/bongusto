@@ -46,7 +46,7 @@
 							"theme_location"	=> "header",
 							"container"	=> "div",
 							"container_class"	=> "nav-links",
-							"menu_class"	=> "bon-nav-links"
+							"menu_class"	=> "bon-nav-links js-navigation"
 						);
 						// Calling the function to build the menu with $header_args arguments
 						wp_nav_menu( $header_args );

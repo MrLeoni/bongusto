@@ -7,9 +7,15 @@
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
  * @package Bongusto
+ * 
  */
  
-// Querying content for newsletter section
+/**---------------------------------------------------------------------------
+ * Using a custom query to get post-content in "footer" post type
+ * Creating two queries for display content in diferente areas of the footer
+-----------------------------------------------------------------------------*/
+ 
+// Querying content for top section
 $news_args = array(
 	"post_type"	=> "footer",
 	"order_by"	=> "modified",
@@ -22,7 +28,7 @@ $news_args = array(
 );
 $news_query = new WP_Query( $news_args );
  
-// Querying content for menu and address section
+// Querying content for middle section
 $address_args = array(
 	"post_type"	=> "footer",
 	"order_by"	=> "modified",
@@ -37,56 +43,62 @@ $address_query = new WP_Query( $address_args );
 
 ?>
 
-	<footer id="footer" class="site-footer">
-		<div class="container">
-			
-			<section class="footer-content-top">
-				<div class="row">
-					<div class="col-md-12">
-						<?php
-							while($news_query->have_posts()): $news_query->the_post();
-								the_content();
-							endwhile;
-							wp_reset_postdata()
-						?>
-					</div>
-				</div>
-			</section>
-			
-			<section class="footer-content-middle">
-				<div class="row">
-					<div class="col-md-6">
-						<?php
-							// Footer menu arguments
-							$footer_args = array(
-								"theme_location"	=> "footer",
-								"container"	=> "nav",
-								"container_class"	=> "footer-links clearfix",
-								"menu_class"	=> "bon-nav-links"
-							);
-							// Calling the function to build the menu with $footer_args arguments
-							wp_nav_menu( $footer_args );
-						?>
-					</div>
-					<div class="col-md-6">
-						<div class="footer-address">
+		<footer id="footer" class="site-footer">
+			<div class="container">
+				
+				<section class="footer-content-top">
+					<div class="row">
+						<div class="col-md-12">
 							<?php
-								while($address_query->have_posts()): $address_query->the_post();
+								//Start the Loop, displaying $news_query posts
+								while($news_query->have_posts()): $news_query->the_post();
 									the_content();
 								endwhile;
-								wp_reset_postdata()
+								// End fo the Loop
+								// Reset post data
+								wp_reset_postdata();
 							?>
 						</div>
 					</div>
-				</div>
-			</section>
-			
-			<section class="footer-content-bottom copy">
-				<p>Bongusto | Todos os direitos reservados <span><a href="http://www.agenciadelucca.com.br" target="_blank" title="Agência Delucca">Agência Delucca</a></span></p>
-			</section>
-			
-		</div>
-	</footer>
+				</section>
+				
+				<section class="footer-content-middle">
+					<div class="row">
+						<div class="col-md-6">
+							<?php
+								// Footer menu arguments
+								$footer_args = array(
+									"theme_location"	=> "footer",
+									"container"	=> "nav",
+									"container_class"	=> "footer-links clearfix",
+									"menu_class"	=> "bon-nav-links"
+								);
+								// Calling the function to build the menu with $footer_args arguments
+								wp_nav_menu( $footer_args );
+							?>
+						</div>
+						<div class="col-md-6">
+							<div class="footer-address">
+								<?php
+									//Start the Loop, displaying $address_query posts
+									while($address_query->have_posts()): $address_query->the_post();
+										the_content();
+									endwhile;
+									// End fo the Loop
+									// Reset post data
+									wp_reset_postdata();
+								?>
+							</div>
+						</div>
+					</div>
+				</section>
+				
+				<section class="footer-content-bottom copy">
+					<p>Bongusto | Todos os direitos reservados <span><a href="http://www.agenciadelucca.com.br" target="_blank" title="Agência Delucca">Agência Delucca</a></span></p>
+				</section>
+				
+			</div>
+		</footer>
 
 	</div><!-- #page -->
 

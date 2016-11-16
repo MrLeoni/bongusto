@@ -16,7 +16,7 @@ $(document).ready(function() {
     // Store elements in variables
     var siteMenu = $(".site-menu");
     var navMenu = $(".nav-links");
-    var navLinks = $(".bon-nav-links");
+    var navLinks = $(".js-navigation");
     
     if (btnHasClass) {
       // If #js-mobile-btn is active

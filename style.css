@@ -248,16 +248,46 @@ ul {
   padding: 0;
 }
 
-.banner {
-	padding: 630px 0 0;
-	background-size: cover;
-}
-
 .img-block {
 	display: block;
 	width: 100%;
 	height: auto;
 	margin: 0;
+}
+
+/*-------------------------------------
+5.X Banners
+-------------------------------------*/
+
+.banner {
+	padding: 630px 0 0;
+	background-size: cover!important;
+}
+
+.banner-text.banner {
+	padding: 175px 0;
+}
+
+.banner-title-white {
+	color: #fff;
+}
+
+.banner-title-color {
+	color: #d89966;
+}
+
+.banner-content .banner-title-white,
+.banner-content .banner-title-color {
+	margin: 0 0 40px;
+	font-size: 3.2em;
+	font-weight: 300;
+}
+
+.banner-content p {
+	margin: 0 0 30px;
+	font-size: 1.6em;
+	font-weight: 300;
+	color: #fff;
 }
 
 /*-------------------------------------
@@ -285,7 +315,7 @@ ul {
 
 /* Size */
 .bon-btn {
-	padding: 15px 30px;
+	padding: 10px 30px;
 }
 
 .bon-btn-sm {
@@ -596,6 +626,14 @@ ul {
 }
 
 /*-------------------------------------
+5.X Home
+-------------------------------------*/
+
+.banner.home {
+	
+}
+
+/*-------------------------------------
 5.X Footer
 -------------------------------------*/
 
@@ -767,6 +805,12 @@ ul {
 }
 
 @media (max-width: 768px) {
+	
+	/* Banners */
+	
+	.banner-text.banner {
+    padding: 175px 0;
+	}
 	
 	/* Header */
 	
