@@ -264,6 +264,10 @@ ul {
 	background-size: cover!important;
 }
 
+.parallax {
+	background-attachment: fixed!important;
+}
+
 .banner-text.banner {
 	padding: 175px 0;
 }
@@ -319,7 +323,7 @@ ul {
 }
 
 .bon-btn-sm {
-	padding: 10px 20px;
+	padding: 5px 20px;
 }
 
 /* Color */
@@ -345,7 +349,6 @@ ul {
 	display: block;
 	width: 100%;
 	height: 100%;
-	border-radius: 5px;
 	position: absolute;
 	top: 100%;
 	left: 0;
@@ -363,28 +366,40 @@ ul {
 	color: #d89966;
 }
 
-.btn-white.fill:after,
-.btn-color.fill:after {
+.btn-white.fill:after {
 	background-color: #fff;
 }
 
 .btn-white.fill:hover,
+.btn-white.fill:active {
+	background-color: transparent!important;
+}
+
+.btn-color.fill:after {
+	background-color: #d89966;
+}
+
 .btn-color.fill:hover,
-.btn-white.fill:active,
 .btn-color.fill:active {
 	background-color: transparent!important;
+	color: #fff!important;
 }
 
 /* Hover Effect */
 .bon-btn.btn-white:hover,
-.bon-btn.btn-color:hover,
 .bon-btn-sm.btn-white:hover,
-.bon-btn-sm.btn-color:hover,
 .bon-btn.btn-white:active,
-.bon-btn.btn-color:active,
-.bon-btn-sm.btn-white:active,
-.bon-btn-sm.btn-color:active {
+.bon-btn-sm.btn-white:active {
 	border-color: #fff;
+	background-color: #fff;
+	color: #d89966;
+}
+
+.bon-btn.btn-color:hover,
+.bon-btn-sm.btn-color:hover,
+.bon-btn.btn-color:active,
+.bon-btn-sm.btn-color:active {
+	border-color: #d89966;
 	background-color: #fff;
 	color: #d89966;
 }
@@ -463,7 +478,8 @@ ul {
 	padding: 0 0 4.5%;
 	border-bottom: 1px solid #d89966;
 	margin: 0 0 4.5%;
-	font-size: 2.6em;
+	font-size: 4em;
+	font-weight: 300;
 	color: #d89966;
 }
 
@@ -629,9 +645,96 @@ ul {
 5.X Home
 -------------------------------------*/
 
-.banner.home {
-	
+/* Products */
+
+.products-wrapper .bx-wrapper .bx-viewport {
+	box-shadow: none;
+	border: 0;
+	left: 0;
+	background: #fff;
 }
+
+.products-wrapper .bx-wrapper .bx-controls-direction a {
+  top: 40%;
+  height: 64px;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+.products-wrapper .bx-wrapper .bx-prev {
+	left: -20px;
+	background: url(assets/bxslider/controls-02.png) no-repeat 0 -64px;
+}
+
+.products-wrapper .bx-wrapper .bx-prev:hover {
+	left: -25px;
+}
+
+.products-wrapper .bx-wrapper .bx-next {
+	right: -20px;
+	background: url(assets/bxslider/controls-02.png) no-repeat 0 0;
+}
+
+.products-wrapper .bx-wrapper .bx-next:hover {
+	right: -25px;
+}
+
+.products-thumbnail-box img {
+	margin: 0 auto;
+}
+
+.products-content-box {
+	text-align: center;
+	color: #222;
+}
+
+.products-content-box h4 {
+	padding: 0 0 10px;
+	border-bottom: 1px solid #d89966;
+	margin: 10px 0;
+	font-size: 1.3em;
+}
+
+.products-content-box p {
+	margin: 0 0 10px;
+	font-size: 1em;
+}
+
+/* Parallax */
+
+#parallax.banner-text.banner {
+	padding: 125px 0;
+}
+
+.parallax .bon-section-header {
+  font-size: 3.2em;
+}
+
+/* Conheça */
+
+.about-content-box {
+	font-weight: 300;
+	color: #222;
+}
+
+.about-content-box h2 {
+	margin: 13% 0 13%;
+	font-size: 4em;
+}
+
+.about-content-box p {
+	margin: 0 0 50px;
+  font-size: 1.3em;
+}
+
+.about-img-box .img-block {
+	display: inline;
+	width: auto;
+	height: auto;
+	margin: 0;
+}
+
+/* Receitas */
 
 /*-------------------------------------
 5.X Footer
@@ -788,6 +891,14 @@ ul {
 		display: none;
 	}
 	
+	/* Home */
+	
+	.about-img-box .img-block {
+		display: block;
+		width: 100%;
+		margin: 5% auto;
+	}
+	
 	/* Footer */
 	
 	.news-box {
@@ -812,6 +923,12 @@ ul {
     padding: 175px 0;
 	}
 	
+	/* Sections */
+	
+	.bon-section-header {
+    font-size: 2.8em;
+	}
+	
 	/* Header */
 	
 	.site-menu {
@@ -834,6 +951,16 @@ ul {
 	
 	body {
 		font-size: 12px;
+	}
+	
+	/* Sections */
+	
+	.bon-section-header {
+    font-size: 2.2em;
+	}
+	
+	.banner-text.banner {
+    padding: 125px 0;
 	}
 	
 	/* Footer */

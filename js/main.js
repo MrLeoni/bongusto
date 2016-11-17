@@ -50,4 +50,32 @@ $(document).ready(function() {
     
   });
   
+  
+  /*--------------------------------
+  // Home Products Carrossel
+  --------------------------------*/
+  
+  $(".products-carrossel").bxSlider({
+    pager: false,
+    slideWidth: 260,
+    minSlides: 1,
+    maxSlides: 4,
+    moveSlides: 1,
+    slideMargin: 30
+  });
+  
+  
+  /*--------------------------------
+  // Parallax Engine
+  --------------------------------*/
+  
+  $('.parallax').each(function(){
+  	var $obj = $(this);
+  	$(window).scroll(function() {
+  		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+  		var bgpos = '50% '+ yPos + 'px';
+  		$obj.css('background-position', bgpos );
+  	}); 
+  });
+  
 });

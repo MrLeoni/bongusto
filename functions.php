@@ -140,6 +140,43 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
+/**
+ * Register "receitas" custom post type with "Categoria" custom taxonomy
+ */
+add_action("init", "receitasPostType");
+function receitasPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Receitas",
+		"singular_name" => "Receita",
+		
+	);
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 20,
+		"menu_icon" => "dashicons-carrot",
+		"public"	=> true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("receitas", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array( "name" => "Categorias de Receitas", "singular_name" => "Categoria da Receita");
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("receitas-categorias", "receitas", $args_taxonomy);
+	
+}
+
 
 /**
  * Register "footer" custom post type with "Categoria" custom taxonomy
