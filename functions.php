@@ -141,6 +141,14 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+ * Filter the except length to 20 characters.
+ */
+function wpdocs_custom_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
+
+/**
  * Register "receitas" custom post type with "Categoria" custom taxonomy
  */
 add_action("init", "receitasPostType");
@@ -154,7 +162,7 @@ function receitasPostType() {
 	);
 	$args_post = array(
 		"labels" => $labels_post,
-		"supports" => array("title", "editor", "thumbnail"),
+		"supports" => array("title", "editor", "excerpt", "thumbnail"),
 		"menu_position" => 20,
 		"menu_icon" => "dashicons-carrot",
 		"public"	=> true,

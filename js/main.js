@@ -26,6 +26,8 @@ $(document).ready(function() {
       // the menu.
       if($(window).height() < 460) {
         siteMenu.css("height", "100%");
+        // Lock scroll on body when has scroll in the mani manu
+        $("body").addClass("not-scroll");
       }
       
       // Apply an animation to slide down the menu and when its is complete
@@ -46,6 +48,9 @@ $(document).ready(function() {
       navLinks.animate({opacity: "0"}, 200, function() {
         navMenu.slideUp(300);
       });
+      
+      // Remove "scroll lock"
+      $("body").removeClass("not-scroll");
     }
     
   });
@@ -53,6 +58,8 @@ $(document).ready(function() {
   
   /*--------------------------------
   // Home Products Carrossel
+  //
+  // Credit: bxSlider
   --------------------------------*/
   
   $(".products-carrossel").bxSlider({
@@ -67,6 +74,8 @@ $(document).ready(function() {
   
   /*--------------------------------
   // Parallax Engine
+  //
+  // Credit: Tableless
   --------------------------------*/
   
   $('.parallax').each(function(){

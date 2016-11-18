@@ -16,65 +16,88 @@
  * 
  *-------------------------------------------------------------------------*/
  
-/* --- Banner --- */
-// Img
-$banner_img_01 = get_field("banner-img-01");
-$banner_img_02 = get_field("banner-img-02");
-
-// Title and Text
-$banner_title_01 = get_field("banner-title-01");
-$banner_title_02 = get_field("banner-title-02");
-$banner_text_01 = get_field("banner-text-01");
-$banner_text_02 = get_field("banner-text-02");
-
-// Link
-$banner_link_check_01 = get_field("banner-link-check-01");
-$banner_link_check_02 = get_field("banner-link-check-02");
-$banner_link_target_01 = get_field("banner-link-target-01");
-$banner_link_target_02 = get_field("banner-link-target-02");
-$banner_link_text_01 = get_field("banner-link-text-01");
-$banner_link_text_02 = get_field("banner-link-text-02");
-$banner_link_url_01 = get_field("banner-link-url-01");
-$banner_link_url_02 = get_field("banner-link-url-02");
-
-
-/* --- Products --- */
-// Title
-$section_title = get_Field("products-title");
-
-//Category
-$product_cat = get_field("products-cat");
-$product_cat_ID = get_cat_ID("$product_cat");
-
-// Creating args for display products
-// Only display posts in a specific category
-$products_args = array(
-	"cat"	=> "$product_cat_ID",
-);
-$products_query = new WP_Query( $products_args );
-
-
-/* --- Parallax --- */
-// Text
-$parallax_text = get_field("parallax-text");
-
-//Image
-$parallax_img = get_field("parallax-img");
-
-
-/* --- Conheça --- */
-// Text
-$about_title = get_field("about-title");
-$about_text = get_field("about-text");
-
-// Link
-$about_link_check = get_field("about-link-check");
-$about_link_target = get_field("about-link-target");
-$about_link_title = get_field("about-link-title");
-$about_link_url = get_field("about-link-url");
-
-// Image
-$about_img = get_field("about-img");
+	/* --- Banner --- */
+	// Img
+	$banner_img_01 = get_field("banner-img-01");
+	$banner_img_02 = get_field("banner-img-02");
+	
+	// Title and Text
+	$banner_title_01 = get_field("banner-title-01");
+	$banner_title_02 = get_field("banner-title-02");
+	$banner_text_01 = get_field("banner-text-01");
+	$banner_text_02 = get_field("banner-text-02");
+	
+	// Link
+	$banner_link_check_01 = get_field("banner-link-check-01");
+	$banner_link_check_02 = get_field("banner-link-check-02");
+	$banner_link_target_01 = get_field("banner-link-target-01");
+	$banner_link_target_02 = get_field("banner-link-target-02");
+	$banner_link_text_01 = get_field("banner-link-text-01");
+	$banner_link_text_02 = get_field("banner-link-text-02");
+	$banner_link_url_01 = get_field("banner-link-url-01");
+	$banner_link_url_02 = get_field("banner-link-url-02");
+	
+	
+	/* --- Products --- */
+	// Title
+	$section_title = get_Field("products-title");
+	
+	//Category
+	$product_cat = get_field("products-cat");
+	$product_cat_ID = get_cat_ID("$product_cat");
+	
+	// Creating args for display products
+	// Only display posts in a specific category
+	$products_args = array(
+		"cat"	=> "$product_cat_ID",
+	);
+	$products_query = new WP_Query( $products_args );
+	
+	
+	/* --- Parallax --- */
+	// Text
+	$parallax_text = get_field("parallax-text");
+	
+	//Image
+	$parallax_img = get_field("parallax-img");
+	
+	
+	/* --- Conheça --- */
+	// Text
+	$about_title = get_field("about-title");
+	$about_text = get_field("about-text");
+	
+	// Link
+	$about_link_check = get_field("about-link-check");
+	$about_link_target = get_field("about-link-target");
+	$about_link_title = get_field("about-link-title");
+	$about_link_url = get_field("about-link-url");
+	
+	// Image
+	$about_img = get_field("about-img");
+	
+	
+/**--------------------------------------------------------------------------
+ * 
+ * Recipes
+ * 
+ * Created new query to display "receitas" post type
+ * 
+ *-------------------------------------------------------------------------*/
+	 
+	
+	// Query args
+	$recipes_args = array(
+		"post_type"	=> "receitas",
+		"posts_per_page"	=> 4,
+		"order_by"	=> "modified",
+		"tax_query"	=> array(array(
+			"taxonomy"	=> "receitas-categorias",
+			"field"	=> "slug",
+			"terms"	=> "exibir-na-home",
+		)),
+	);
+	$recipes_query = new WP_Query( $recipes_args );
 
 get_header(); ?>
 
@@ -150,41 +173,70 @@ get_header(); ?>
 					<h2 class="bon-section-header center white"><?php echo $parallax_text; ?></h2>
 				</section>
 				
-				<section id="about-home" class="bon-section-wrapper">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-5">
-								<div class="about-content-box">
-									<h2><?php echo $about_title; ?></h2>
-									<p><?php echo $about_text; ?></p>
-									<?php if($about_link_check == "true") { ?>
-										<a class="bon-btn-sm btn-color" href="<?php echo $about_link_url; ?>" title="<?php echo $about_link_title; ?>" target="<?php echo $about_link_target; ?>"><?php echo $about_link_title; ?></a>
-									<?php } ?>
-								</div>
-							</div>
-							<div class="col-md-offset-1 col-md-6">
-								<div class="about-img-box">
-									<img class="img-block" src="<?php echo $about_img["url"]; ?>" alt="<?php echo $about_img["alt"]; ?>">
-								</div>
-							</div>
-						</div>
+				<section id="about-home" class="bon-section-wrapper clearfix">
+					<div class="home-about-content-box">
+						<h2><?php echo $about_title; ?></h2>
+						<p><?php echo $about_text; ?></p>
+						<?php if($about_link_check == "true") { ?>
+							<a class="bon-btn-sm btn-color" href="<?php echo $about_link_url; ?>" title="<?php echo $about_link_title; ?>" target="<?php echo $about_link_target; ?>"><?php echo $about_link_title; ?></a>
+						<?php } ?>
+					</div>
+					<div class="home-about-img-box">
+						<img class="img-block" src="<?php echo $about_img["url"]; ?>" alt="<?php echo $about_img["alt"]; ?>">
 					</div>
 				</section>
 				
 				<section id="recipes" class="bon-section-wrapper">
-					<div class="recipes-wrapper clearfix">
+					<div class="home-recipes-wrapper">
 						
+						<?php
+						// $count will track the position of the post in the query
+						// and determine the background-color and side of the content
+						$count = 1;
+						// Start the Loop
+						while ( $recipes_query->have_posts() ) : $recipes_query->the_post(); ?>
 						
+						<div class="recipes-showcase background-color-0<?php echo $count; ?>">
+						
+						<?php if($count < 3) { // Using the $count to decide how to organize the content of recipe ?>
+							
+							<div class="recipes-showcase-content">
+								<?php
+								the_title("<h2 class='bon-section-header center white border'>", "</h2>");
+								the_excerpt();
+								echo "<a class='bon-btn btn-white fill' href='".get_the_permalink()."' title='".get_the_title()."'>Saiba Mais</a>";
+								?>
+							</div>
+							<div class="recipes-showcase-thumbnail">
+								<?php the_post_thumbnail("large"); ?>
+							</div>
+								
+						<?php } else { ?>
+								
+							<div class="recipes-showcase-thumbnail">
+								<?php the_post_thumbnail("large"); ?>
+							</div>
+							<div class="recipes-showcase-content">
+								<?php
+								the_title("<h2 class='bon-section-header center white border'>", "</h2>");
+								the_excerpt();
+								echo "<a class='bon-btn btn-white fill' href='".get_the_permalink()."' title='".get_the_title()."'>Saiba Mais</a>";
+								?>
+							</div>
+								
+						<?php } // End if ?>
+						
+						</div><!-- /.recipes-showcase -->
+						
+						<?php
+						$count++; // Iterate $count
+						endwhile; // End of the loop.
+						wp_reset_postdata(); // Reset query data
+						?>		
 						
 					</div>
 				</section>
 				
-				<?php
-				while ( have_posts() ) : the_post();
-					the_content();
-				endwhile; // End of the loop.
-				?>
-			
 			</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->
