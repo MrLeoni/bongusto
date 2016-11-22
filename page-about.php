@@ -59,30 +59,21 @@ get_header(); ?>
 						</div>
 					</div>
 					
-					<div class="about-box background-color-02 clearfix">
-						<div class="about-img-box">
-							<img src="<?php echo $box_img_01["url"]; ?>" alt="<?php echo $box_img_01["alt"]; ?>">
-						</div>
+					<div class="about-box clearfix missao" style="background: url(<?php echo $box_img_01 ;?>) no-repeat center top">
 						<div class="about-content-box">
 							<h2 class="bon-section-header white border"><?php echo $box_title_01; ?></h2>
 							<p><?php echo $box_text_01; ?></p>
 						</div>
 					</div>
 					
-					<div class="about-box background-color-01 clearfix">
+					<div class="about-box clearfix visao" style="background: url(<?php echo $box_img_02; ?>) no-repeat center top">
 						<div class="about-content-box">
 							<h2 class="bon-section-header white border"><?php echo $box_title_02; ?></h2>
 							<p><?php echo $box_text_02; ?></p>
 						</div>
-						<div class="about-img-box">
-							<img src="<?php echo $box_img_02["url"]; ?>" alt="<?php echo $box_img_02["alt"]; ?>">
-						</div>
 					</div>
 					
-					<div class="about-box background-color-04 clearfix">
-						<div class="about-img-box">
-							<img src="<?php echo $box_img_03["url"]; ?>" alt="<?php echo $box_img_03["alt"]; ?>">
-						</div>
+					<div class="about-box clearfix valores" style="background: url(<?php echo $box_img_03; ?>) no-repeat center top">
 						<div class="about-content-box">
 							<h2 class="bon-section-header white border"><?php echo $box_title_03; ?></h2>
 							<p><?php echo $box_text_03; ?></p>
