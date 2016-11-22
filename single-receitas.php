@@ -1,7 +1,7 @@
 <?php
 /**
  * 
- * The template for displaying all single posts.
+ * The template for displaying receitas posts.
  *
  * @package Bongusto
  * 
@@ -11,12 +11,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-			<div id="single-posts">
+			<div id="single-receitas">
 				<?php
 				while ( have_posts() ) : the_post();
-			
-					get_template_part( 'template-parts/content', get_post_format() );
-			
+		
+					get_template_part( 'template-parts/content', "receitas" );
+		
 				endwhile; // End of the loop.
 				?>
 			</div>

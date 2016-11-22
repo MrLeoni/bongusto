@@ -984,6 +984,54 @@ ul {
 }
 
 /*-------------------------------------
+5.X Products Internal
+-------------------------------------*/
+
+#single-posts {
+	background-color: #fff;
+}
+
+.entry-header .bon-section-wrapper {
+	padding: 3% 0 5%;
+}
+
+.entry-header .bon-section-header {
+	margin: 0;
+}
+
+.entry-content {
+	padding: 0 0 40px;
+}
+
+.post-img-box {
+	width: 100%;
+	padding: 8%;
+	border: 1px solid #d89966;
+	border-bottom-width: 15px;
+}
+
+.post-img-box img {
+	display: block;
+	width: 95%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.entry-content .bon-btn {
+	margin: 4% 0 0;
+}
+
+.post-content-box {
+	margin: 0;
+}
+
+.post-content-box ul {
+	padding-left: 15px;
+	margin-left: 15px;
+	list-style: disc;
+}
+
+/*-------------------------------------
 5.X Recipes
 -------------------------------------*/
 
@@ -1080,6 +1128,40 @@ ul {
 .recipe-box:hover .btn-color:visited {
 	background-color: #fff;
 	color: #d89966;
+}
+
+/*-------------------------------------
+5.X Recipes Internal
+-------------------------------------*/
+
+#single-receitas {
+	background-color: #fff;
+}
+
+#single-receitas hr {
+	border-color: #d89966;
+}
+
+.entry-content {
+	padding: 0 0 40px;
+}
+
+.entry-content .bon-btn {
+	margin: 4% 0 0;
+}
+
+.receita-content-box {
+	margin: 2% 0;
+}
+
+.receita-content-box ul {
+	padding-left: 15px;
+	margin-left: 15px;
+	list-style: disc;
+}
+
+#single-receitas a.bon-btn {
+	display: inline-flex;
 }
 
 /*-------------------------------------
@@ -1223,6 +1305,34 @@ ul {
 }
 
 /*-------------------------------------
+5.X 404 & Not Found
+-------------------------------------*/
+
+.banner.error-404 {
+	padding: 300px 0 0;
+}
+
+.error-404 .page-header {
+	padding-bottom: 0;
+	border-bottom: 0;
+	margin: 0;
+}
+
+.error-404 p {
+	margin: 25% 0 0;
+	font-size: 1.3em;
+}
+
+.error-404 i {
+	color: #d89966;
+	font-size: 20em;
+}
+
+.error-404 .bon-link-color:hover {
+	color: #222;
+}
+
+/*-------------------------------------
 5.X Queries
 -------------------------------------*/
 
@@ -1313,6 +1423,12 @@ ul {
 	
 	.footer-links {
 		margin: 0 0 30px;
+	}
+	
+	/* 404 */
+	
+	.error-404 p {
+		margin: 5% 0 0;
 	}
 	
 }
@@ -1441,6 +1557,12 @@ ul {
     transform: none;
 	}
 	
+	/* Products Internal */
+	
+	.post-content-box {
+    margin: 10% 0 0;
+	}
+	
 }
 
 @media (max-width: 460px) {
@@ -1495,6 +1617,19 @@ ul {
 	
 	.footer-address {
     text-align: center;
+	}
+	
+}
+
+@media print {
+	
+	#header,
+	#footer,
+	.banner,
+	a.bon-btn,
+	button.bon-btn {
+		display: none;
+		color: transparent;
 	}
 	
 }

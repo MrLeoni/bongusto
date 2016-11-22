@@ -87,4 +87,12 @@ $(document).ready(function() {
   	}); 
   });
   
+  /*--------------------------------
+  // Print Recipes
+  --------------------------------*/
+  
+  $("#js-print").click(function() {
+  	window.print();
+  });
+  
 });
