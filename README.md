@@ -25,5 +25,12 @@ Its a theme for __content__ administration the capabillity for change __layout__
 <br>
 <br>
 
+## Versions:
+
+#### 1.0.0 - 23/11/2016
+* Theme released!
+
+<br>
+
 #### 0.0.0 - 11/11/2016
 * First Commit!

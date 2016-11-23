@@ -4,12 +4,12 @@ Theme Name: Bongusto
 Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://www.agenciadelucca.com.br
-Description: Catálogo online
-Version: 0.0.0
+Description: Catálogo de produtos online para a empresa Bongusto
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bongusto
-Tags:
+Tags: Bongusto, Café, São Paulo, Brasil
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -31,7 +31,23 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 	
 5.0 Author CSS
 	5.1 Setup
-
+	5.2 Banner
+	5.3 Links & Buttons
+	5.4 Navigation
+	5.5 Sections
+	5.6 Forms
+	5.7 Header
+	5.8 Home
+	5.9 About
+	5.10 Products
+	5.11 Products Internal
+	5.12 Recipes
+	5.13 Recipes Internal
+	5.14 Contact
+	5.15 Footer
+	5.16 404
+	5.17 Queries
+	
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 Navigation
@@ -256,7 +272,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Banners
+5.2 Banners
 -------------------------------------*/
 
 .banner {
@@ -295,7 +311,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Links & Buttons
+5.3 Links & Buttons
 -------------------------------------*/
 
 /* Basic Layout */
@@ -436,7 +452,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Navigation Links
+5.4 Navigation Links
 -------------------------------------*/
 
 .bon-nav-links li {
@@ -466,7 +482,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Sections
+5.5 Sections
 -------------------------------------*/
 
 .bon-section-wrapper {
@@ -501,7 +517,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Form Input
+5.6 Form Input
 -------------------------------------*/
 
 .bon-form {
@@ -522,7 +538,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Header
+5.7 Header
 -------------------------------------*/
 
 .site-menu {
@@ -643,7 +659,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Home
+5.8 Home
 -------------------------------------*/
 
 /* Products */
@@ -825,7 +841,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X About
+5.9 About
 -------------------------------------*/
 
 #about-content.bon-section-wrapper {
@@ -874,7 +890,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Products
+5.10 Products
 -------------------------------------*/
 
 .product-box {
@@ -984,7 +1000,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Products Internal
+5.11 Products Internal
 -------------------------------------*/
 
 #single-posts {
@@ -1032,7 +1048,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Recipes
+5.12 Recipes
 -------------------------------------*/
 
 .recipe-box {
@@ -1131,7 +1147,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Recipes Internal
+5.13 Recipes Internal
 -------------------------------------*/
 
 #single-receitas {
@@ -1165,7 +1181,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Contact
+5.14 Contact
 -------------------------------------*/
 
 .bon-form.contact-btn {
@@ -1188,7 +1204,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Footer
+5.15 Footer
 -------------------------------------*/
 
 .site-footer {
@@ -1305,7 +1321,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X 404 & Not Found
+5.16 404
 -------------------------------------*/
 
 .banner.error-404 {
@@ -1316,6 +1332,10 @@ ul {
 	padding-bottom: 0;
 	border-bottom: 0;
 	margin: 0;
+}
+
+.page-content .col-md-4 {
+	text-align: left;
 }
 
 .error-404 p {
@@ -1333,7 +1353,7 @@ ul {
 }
 
 /*-------------------------------------
-5.X Queries
+5.17 Queries
 -------------------------------------*/
 
 @media (max-width: 990px) {
@@ -1426,6 +1446,14 @@ ul {
 	}
 	
 	/* 404 */
+	
+	.page-content .col-md-4 {
+		text-align: center;
+	}
+	
+	.error-404 i {
+    font-size: 15em;
+	}
 	
 	.error-404 p {
 		margin: 5% 0 0;

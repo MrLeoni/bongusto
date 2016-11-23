@@ -26,12 +26,14 @@ get_header(); ?>
 							</header><!-- .page-header -->
 							
 							<div class="page-content">
-								<div class="row">
-									<div class="col-md-4">
-										<i class="fa fa-coffee" aria-hidden="true"></i>
-									</div>
-									<div class="col-md-4">
-										<p>Ops, parece que a página que você procura foi tomar um café, ou não existe. Deseja voltar para nossa <a class="bon-link-color" href="<?php echo esc_html(home_url("/")); ?>" title="Home">Home</a>?</p>
+								<div class="container">
+									<div class="row">
+										<div class="col-md-4">
+											<i class="fa fa-coffee" aria-hidden="true"></i>
+										</div>
+										<div class="col-md-4">
+											<p>Ops, parece que a página que você procura foi tomar um café, ou não existe. Deseja voltar para nossa <a class="bon-link-color" href="<?php echo esc_html(home_url("/")); ?>" title="Home">Home</a>?</p>
+										</div>
 									</div>
 								</div>
 							</div><!-- .page-content -->
