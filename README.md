@@ -5,10 +5,12 @@ Creation: [Agência Delucca](http://www.agenciadelucca.com.br)
 
 Programmer: [Leoni Tonet Mella](http://leonimella.com)
 
+Base Theme: [Underscores](http://underscores.me)
+
 <br>
 <br>
 
-### Description
+## Description
 
 Theme builded for WordPress. This theme is about a online catalog for __Bongusto__ company, where them can show products, the company it self and any other information about them
 Its a theme for __content__ administration the capabillity for change __layout__ is very limited
@@ -27,10 +29,15 @@ Its a theme for __content__ administration the capabillity for change __layout__
 
 ## Versions:
 
-#### 1.0.0 - 23/11/2016
+### 1.0.1 - 25/11/16
+* Added a "Under Construction" page. The construction page was builded in the "home.php" page and it's use the WordPress theme hierarchy for display it.
+
+<br>
+
+### 1.0.0 - 23/11/2016
 * Theme released!
 
 <br>
 
-#### 0.0.0 - 11/11/2016
+### 0.0.0 - 11/11/2016
 * First Commit!
