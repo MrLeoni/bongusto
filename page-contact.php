@@ -33,6 +33,10 @@ get_header(); ?>
 					</div>
 				</section>
 				
+				<section id="map" class="map-box">
+					<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJWs1_4VMz5QRuGkp4IA78jI&key=AIzaSyACMUbYgasddo1ltLfEbChoJEmHsuVqQOk&zoom=15" allowfullscreen></iframe>
+				</section>
+				
 			</article>
 		</main><!-- #main -->
 	</div><!-- #primary -->

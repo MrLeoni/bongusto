@@ -62,9 +62,26 @@ $(document).ready(function() {
   // Credit: bxSlider
   --------------------------------*/
   
+  // Function to determine the size of slideWidth.
+  var itemWidth = function(screen) {
+  	// Take a parameter and check if its small than 460 or 320
+  	// and than return a value
+  	
+  	if( screen < 460 ) {
+  		size = 390;
+  	} else if ( screen < 320 ) {
+  		size = 300
+  	} else {
+  		// Default value to be return
+  		size = 260;
+  	}
+  	
+  	return size;
+  }
+  
   $(".products-carrossel").bxSlider({
     pager: false,
-    slideWidth: 260,
+    slideWidth: itemWidth($(window).width()) /* Call function and pass window object width as a parameter */,
     minSlides: 1,
     maxSlides: 4,
     moveSlides: 1,
@@ -80,11 +97,23 @@ $(document).ready(function() {
   
   $('.parallax').each(function(){
   	var $obj = $(this);
-  	$(window).scroll(function() {
-  		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
-  		var bgpos = '50% '+ yPos + 'px';
-  		$obj.css('background-position', bgpos );
-  	}); 
+  	var windowWidth = $(window).width();
+  	
+  	// Apply parallax effect only in screens and devices with more than 1200px
+  	if(windowWidth < 1200) {
+  		
+  		// Empty
+  		
+  	} else {
+  	
+	  	$(window).scroll(function() {
+	  		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+	  		var bgpos = '50% '+ yPos + 'px';
+	  		$obj.css('background-position', bgpos );
+	  	}); 
+  	
+  	}
+  	
   });
   
   /*--------------------------------

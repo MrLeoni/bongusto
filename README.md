@@ -12,8 +12,8 @@ Base Theme: [Underscores](http://underscores.me)
 
 ## Description
 
-Theme builded for WordPress. This theme is about a online catalog for __Bongusto__ company, where them can show products, the company it self and any other information about them
-Its a theme for __content__ administration the capabillity for change __layout__ is very limited
+Theme builded for WordPress. This theme is a online catalog for __Bongusto__ company, where they can show their products, their company any other information they want
+Its a theme for __content__ administration, therefore the capabillity for change __layout__ is very limited
 
 <br>
 <br>
@@ -28,6 +28,13 @@ Its a theme for __content__ administration the capabillity for change __layout__
 <br>
 
 ## Versions:
+
+### 1.0.2 - 29/11/2016
+* Added Google Maps in "page-contact.php" page
+* Mobile menu is now more darker "rgba(0, 0, 0, 0.9)" and had font-size increased to 1.4em
+* Added Google Analytics script.
+
+<br>
 
 ### 1.0.1 - 25/11/16
 * Added a "Under Construction" page. The construction page was builded in the "home.php" page and it's use the WordPress theme hierarchy for display it.
