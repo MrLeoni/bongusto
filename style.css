@@ -1049,8 +1049,35 @@ ul {
 	list-style: disc;
 }
 
+/* Product Table */
+
+.table-custom {
+	width: 600px;
+}
+
+.table-custom th {
+	padding: 15px!important;
+	text-align: center;
+	color: #d89966;
+}
+
+.table-custom td {
+	color: #222;
+}
+
+.table-custom .table-footer td {
+	padding: 30px!important;
+	text-align: center;
+	color: #222;
+}
+
+.table-custom tr th,
+.table-custom tr td {
+	border-color: #ead1bc!important;
+}
+
 /*-------------------------------------
-5.12 Recipes
+5.12 Recipes 
 -------------------------------------*/
 
 .recipe-box {
@@ -1622,6 +1649,11 @@ ul {
 	
 	.post-content-box {
     margin: 10% 0 0;
+	}
+	
+	.table-custom {
+		width: 90%;
+		margin: 0 auto;
 	}
 	
 }

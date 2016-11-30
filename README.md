@@ -29,6 +29,11 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.0.3 - 30/11/2016
+* Added nutritional table in single products page
+
+<br>
+
 ### 1.0.2 - 29/11/2016
 * Added Google Maps in "page-contact.php" page
 * Mobile menu is now more darker "rgba(0, 0, 0, 0.9)" and had font-size increased to 1.4em
