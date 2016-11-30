@@ -29,6 +29,13 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.0.4 - 30/11/2016
+* Product's box, on "Produtos" page, is now clickable in any part
+* Footer navigation change to 2 columns and increased font-size in mobile devices
+* Change ".banner" padding size to 430px istead of 630px
+
+<br>
+
 ### 1.0.3 - 30/11/2016
 * Added nutritional table in single products page
 
