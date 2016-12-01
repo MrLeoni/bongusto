@@ -20,7 +20,8 @@
 	
 	// Query args
 	$recipes_args = array(
-		"post_type"	=> "receitas"
+		"post_type"	=> "receitas",
+		
 	);
 	$recipes_query = new WP_Query( $recipes_args );
 
@@ -56,15 +57,17 @@ get_header(); ?>
 											
 											<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-offset-0 col-md-3">
 												<div class="recipe-box">
-													<div class="recipe-box-img">
-														<?php the_post_thumbnail("medium_large"); ?>
-													</div>
-													<div class="recipe-box-content">
-														<?php
-														the_title("<h2>", "</h2>");
-														echo "<a class='bon-btn-sm btn-color' href='".get_the_permalink()."' title='Saiba Mais'>Saiba Mais</a>";
-														?>
-													</div>
+													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="bon-box-link">
+														<div class="recipe-box-img">
+															<?php the_post_thumbnail("medium_large"); ?>
+														</div>
+														<div class="recipe-box-content">
+															<?php
+															the_title("<h2>", "</h2>");
+															echo "<p class='bon-btn-sm btn-color' >Saiba Mais</p>";
+															?>
+														</div>
+													</a>
 												</div>
 											</div>
 											

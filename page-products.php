@@ -55,7 +55,7 @@ get_header(); ?>
 										while($products_query->have_posts()): $products_query->the_post(); ?>
 											<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-offset-0 col-md-3">
 												<div class="product-box">
-													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="product-link">
+													<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="bon-box-link">
 														<div class="product-box-img">
 															<?php the_post_thumbnail("medium"); ?>
 														</div>
@@ -63,7 +63,7 @@ get_header(); ?>
 															<?php
 															the_title("<h2>", "</h2>");
 															echo "<p>".get_field("post-home-info")."</p>";
-															echo "<a class='bon-btn-sm btn-color' href='".get_the_permalink()."' title='Saiba Mais'>Saiba Mais</a>";
+															echo "<p class='bon-btn-sm btn-color' >Saiba Mais</p>";
 															?>
 														</div>
 													</a>
@@ -71,7 +71,7 @@ get_header(); ?>
 											</div>
 										<?php
 										endwhile;
-										//wp_reset_postdata();
+										wp_reset_postdata();
 										?>
 									</div>
 								</div>
@@ -87,3 +87,22 @@ get_header(); ?>
 
 <?php
 get_footer();
+
+/*
+<div class="col-xs-offset-1 col-xs-10 col-sm-offset-0 col-sm-6 col-md-offset-0 col-md-3">
+	<div class="product-box">
+		<a href="<?php the_permalink(); ?>" title="<?php echo get_the_title(); ?>" class="bon-box-link">
+			<div class="product-box-img">
+				<?php the_post_thumbnail("medium"); ?>
+			</div>
+			<div class="product-box-content">
+				<?php
+				the_title("<h2>", "</h2>");
+				echo "<p>".get_field("post-home-info")."</p>";
+				echo "<a class='bon-btn-sm btn-color' href='".get_the_permalink()."' title='Saiba Mais'>Saiba Mais</a>";
+				?>
+			</div>
+		</a>
+	</div>
+</div>
+*/
