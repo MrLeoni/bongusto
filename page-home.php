@@ -89,8 +89,7 @@
 	// Query args
 	$recipes_args = array(
 		"post_type"	=> "receitas",
-		"posts_per_page"	=> 4,
-		"order_by"	=> "modified",
+		"orderby"	=> 'modified',
 		"tax_query"	=> array(array(
 			"taxonomy"	=> "receitas-categorias",
 			"field"	=> "slug",
@@ -153,7 +152,7 @@ get_header(); ?>
 													</div>
 													<div class="products-content-box">
 														<?php
-															the_title("<h4>", "</h4>");
+															echo "<h4>".get_field("post-home-title")."</h4>";
 															echo "<p>".get_field("post-home-info")."</p>";
 														?>
 														<a class="bon-btn-sm btn-color fill" href="<?php the_permalink(); ?>" title="<?php get_the_title(); ?>">Saiba Mais</a>

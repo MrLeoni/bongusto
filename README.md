@@ -29,6 +29,12 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.0.6 - 21/12/2016
+* Title of the products is now displayed via ACF Fields inside the post page
+
+<br>
+<br>
+
 ### 1.0.5 - 01/12/2016
 * Fixed bug in pages "Produtos" e "Receitas"
 

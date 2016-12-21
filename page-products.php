@@ -20,7 +20,8 @@
 	
 	// Query args
 	$products_args = array(
-		"post_type"	=> "post"
+		"post_type"	=> "post",
+		"orderby"	=> 'modified'
 	);
 	$products_query = new WP_Query( $products_args );
 
@@ -61,7 +62,7 @@ get_header(); ?>
 														</div>
 														<div class="product-box-content">
 															<?php
-															the_title("<h2>", "</h2>");
+															echo "<h2>".get_field("post-home-title")."</h2>";
 															echo "<p>".get_field("post-home-info")."</p>";
 															echo "<p class='bon-btn-sm btn-color' >Saiba Mais</p>";
 															?>

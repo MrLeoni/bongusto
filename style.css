@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://www.agenciadelucca.com.br
 Description: Site institucional com pequeno catálogo de produtos online para a empresa Bongusto
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bongusto
@@ -531,7 +531,7 @@ ul {
 }
 
 /*-------------------------------------
-5.6 Form Input
+5.6 Forms
 -------------------------------------*/
 
 .bon-form {
@@ -549,6 +549,10 @@ ul {
 	outline: none;
 	border-color: #2196F3!important;
   box-shadow: 2px 2px 5px #2196F3;
+}
+
+.captcha {
+	float: left;
 }
 
 /*-------------------------------------
@@ -1369,14 +1373,14 @@ ul {
 	text-indent: 9999px;
 	background: url(assets/img/logo/logo-delucca.png) no-repeat;
 	background-size: cover;
-	background-position: center top;
+	background-position: center bottom;
 	-webkit-transition: 0.1s;
 	transition: 0.1s;
 }
 
 .copy a:hover,
 .copy a:active {
-	background-position: center bottom;
+	background-position: center top;
 }
 
 /*-------------------------------------
