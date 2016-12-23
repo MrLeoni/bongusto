@@ -102,13 +102,6 @@ $address_query = new WP_Query( $address_args );
 
 	</div><!-- #page -->
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="<?php bloginfo( "template_url" ); ?>/js/jquery-1.12.4.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="<?php bloginfo( "template_url" ); ?>/js/bootstrap.min.js"></script>
-<script src="<?php bloginfo( "template_url" ); ?>/js/jquery.bxslider.min.js"></script>
-<script src="<?php bloginfo( "template_url" ); ?>/js/main.js"></script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -18,23 +18,16 @@
  
 	/* --- Banner --- */
 	// Img
-	$banner_img_01 = get_field("banner-img-01");
 	$banner_img_02 = get_field("banner-img-02");
 	
 	// Title and Text
-	$banner_title_01 = get_field("banner-title-01");
 	$banner_title_02 = get_field("banner-title-02");
-	$banner_text_01 = get_field("banner-text-01");
 	$banner_text_02 = get_field("banner-text-02");
 	
 	// Link
-	$banner_link_check_01 = get_field("banner-link-check-01");
 	$banner_link_check_02 = get_field("banner-link-check-02");
-	$banner_link_target_01 = get_field("banner-link-target-01");
 	$banner_link_target_02 = get_field("banner-link-target-02");
-	$banner_link_text_01 = get_field("banner-link-text-01");
 	$banner_link_text_02 = get_field("banner-link-text-02");
-	$banner_link_url_01 = get_field("banner-link-url-01");
 	$banner_link_url_02 = get_field("banner-link-url-02");
 	
 	
@@ -74,7 +67,18 @@
 	$about_link_url = get_field("about-link-url");
 	
 	// Image
-	$about_img = get_field("about-img");
+	// Query args
+	$about_args = array(
+		"post_type"	=> "banners",
+		"orderby"	=> 'modified',
+		"posts_per_page"	=> 99,
+		"tax_query"	=> array(array(
+			"taxonomy"	=> "banner-categorias",
+			"field"	=> "slug",
+			"terms"	=> "home-conheca",
+		)),
+	);
+	$about_query = new WP_Query( $about_args );
 	
 	
 /**--------------------------------------------------------------------------
@@ -106,21 +110,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 			<article id="home">
 				
-				<section id="banner-01" class="banner banner-text" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<?php echo $banner_img_01; ?>) no-repeat center">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-5">
-								<div class="banner-content">
-									<h2 class="banner-title-white"><?php echo $banner_title_01; ?></h2>
-									<p><?php echo $banner_text_01; ?></p>
-									<?php	if($banner_link_check_01 == "true") { ?>
-										<a class="bon-btn btn-white" href="<?php echo $banner_link_url_01; ?>" title="<?php echo $banner_link_text_01; ?>" target="<?php echo $banner_link_target_01 ?>"><?php echo $banner_link_text_01; ?></a>
-									<?php }	?>
-								</div>
-							</div>
-						</div>
-					</div>	
-				</section>
+				<?php get_template_part( 'template-parts/content', 'banner' ); ?>
+				
 				<section id="banner-02" class="banner banner-text" style="background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(<?php echo $banner_img_02; ?>) no-repeat center">
 					<div class="container">
 						<div class="row">
@@ -181,10 +172,20 @@ get_header(); ?>
 						<?php } ?>
 					</div>
 					<div class="home-about-img-box">
-						<img class="img-block" src="<?php echo $about_img["url"]; ?>" alt="<?php echo $about_img["alt"]; ?>">
+						<ul class="about-img-slider">
+						
+						<?php while($about_query->have_posts()): $about_query->the_post(); ?>
+							
+						<li>
+							<?php the_post_thumbnail('full'); ?>
+						</li>
+						
+						<?php endwhile; ?>
+						</ul>
 					</div>
 				</section>
 				
+				<?php /*
 				<section id="recipes" class="bon-section-wrapper">
 					<div class="home-recipes-wrapper">
 						
@@ -235,6 +236,7 @@ get_header(); ?>
 						
 					</div>
 				</section>
+				*/ ?>
 				
 			</article>
 		</main><!-- #main -->

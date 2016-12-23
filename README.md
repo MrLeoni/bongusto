@@ -29,6 +29,14 @@ Its a theme for __content__ administration, therefore the capabillity for change
 
 ## Versions:
 
+### 1.1.6 - 23/12/2016
+* Implemented slider banner in Home page
+* Change the static image on "Conheça" in home page to a slider image
+* Hided "Receitas" section from the website
+
+<br>
+<br>
+
 ### 1.0.6 - 21/12/2016
 * Title of the products is now displayed via ACF Fields inside the post page
 

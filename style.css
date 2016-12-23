@@ -5,7 +5,7 @@ Theme URI: http://underscores.me/
 Author: Agência Delucca
 Author URI: http://www.agenciadelucca.com.br
 Description: Site institucional com pequeno catálogo de produtos online para a empresa Bongusto
-Version: 1.0.6
+Version: 1.1.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bongusto
@@ -276,6 +276,34 @@ ul {
 5.2 Banners
 -------------------------------------*/
 
+/* Banner Slider */
+
+.banner-slider-wrapper .bx-wrapper {
+	margin: 0 auto;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-viewport {
+	border: 0;
+	left: 0;
+	box-shadow: none;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager, 
+.banner-slider-wrapper .bx-wrapper .bx-controls-auto {
+	bottom: 30px;
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a {
+	background-color: rgba(255,255,255,0.4);
+}
+
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.banner-slider-wrapper .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background-color: #fff;
+}
+
+/* Banner Static */
+
 .banner {
 	padding: 430px 0 0;
 	background-size: cover!important;
@@ -316,6 +344,7 @@ ul {
 -------------------------------------*/
 
 /* Basic Layout */
+
 .bon-btn,
 .bon-btn-sm,
 .bon-btn:link,
@@ -761,7 +790,7 @@ ul {
 }
 
 .home-about-content-box {
-	padding: 5% 5% 5% 20%;
+	padding: 0 5% 5% 20%;
 	font-weight: 300;
 	color: #222;
 }
@@ -776,15 +805,37 @@ ul {
   font-size: 1.3em;
 }
 
-.home-about-img-box {
-	overflow: hidden;
+/* Banner Slider */
+
+.home-about-img-box .bx-wrapper {
+	margin: 0 auto;
 }
 
-.home-about-img-box .img-block {
-	display: inline;
-	width: auto;
+.home-about-img-box .bx-wrapper img {
 	height: auto;
-	margin: 0;
+}
+
+.home-about-img-box .bx-wrapper .bx-viewport {
+	border: 0;
+	left: 0;
+	box-shadow: none;
+}
+
+.home-about-img-box .bx-wrapper .bx-pager, 
+.home-about-img-box .bx-wrapper .bx-controls-auto {
+	top: 15px;
+	bottom: initial;
+	text-align: left;
+  padding-left: 40px;
+}
+
+.home-about-img-box .bx-wrapper .bx-pager.bx-default-pager a {
+	background-color: rgba(255,255,255,0.4);
+}
+
+.home-about-img-box .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.home-about-img-box .bx-wrapper .bx-pager.bx-default-pager a.active {
+	background-color: #fff;
 }
 
 /* Receitas */
@@ -868,7 +919,7 @@ ul {
 }
 
 .about-box {
-	height: 458px;
+	height: 470px;
 	background-size: cover!important;
 	position: relative;
 }
@@ -1318,15 +1369,6 @@ ul {
 	margin: 0;
 }
 
-.footer-content-middle li:before {
-	content: "• ";
-	color: #fff;
-}
-
-.footer-content-middle li.current-menu-item:before {
-	content: "";
-}
-
 .footer-content-middle li {
   display: block;
   width: 40%;
@@ -1485,7 +1527,7 @@ ul {
 	}
 	
 	.home-about-content-box {
-    padding: 5% 5% 0;
+    padding: 5%;
 	}
 	
 	.home-about-content-box,

@@ -21,12 +21,6 @@
 	<link href="<?php bloginfo( "stylesheet_directory" ); ?>/assets/img/logo/icon_32.png" rel="icon" size="32x32">
 	<!-- Google Font -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
-	<!-- Bootstrap -->
-	<link href="<?php bloginfo( "stylesheet_directory" ); ?>/assets/css/bootstrap.min.css" rel="stylesheet">
-	<!-- Icons -->
-	<link href="<?php bloginfo( "stylesheet_directory" ); ?>/assets/css/font-awesome.min.css" rel="stylesheet">
-	<!-- BxSlider CSS -->
-	<link href="<?php bloginfo( "stylesheet_directory" ); ?>/assets/css/jquery.bxslider.css" rel="stylesheet">
 	
 	<?php wp_head(); ?>
 </head>

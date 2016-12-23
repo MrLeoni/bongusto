@@ -103,11 +103,21 @@ add_action( 'widgets_init', 'bongusto_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bongusto_scripts() {
-	wp_enqueue_style( 'bongusto-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.min.css' );
+	
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.min.css' );
+	
+	wp_enqueue_style( 'bxslider-style', get_template_directory_uri() . '/assets/css/jquery.bxslider.css' );
+	
+	wp_enqueue_style( 'bongusto-style', get_stylesheet_uri(), array('bootstrap', 'font-awesome', 'bxslider-style') );
 
 	wp_enqueue_script( 'bongusto-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'bongusto-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	
+	wp_enqueue_script( 'bxslider-script', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array(), '4.1.2', true );
+	
+	wp_enqueue_script( 'main', get_template_directory_uri() . '/js/main.js', array('bxslider-script'), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -185,6 +195,43 @@ function receitasPostType() {
 	
 }
 
+/**
+ * Register "banners" custom post type with "Categoria" custom taxonomy
+ */
+add_action("init", "bannersPostType");
+function bannersPostType() {
+	
+	// Registering new Custom Post Type
+	$labels_post = array( 
+		"name" => "Banners",
+		"singular_name" => "Banner",
+		
+	);
+	$args_post = array(
+		"labels" => $labels_post,
+		"supports" => array("title", "editor", "thumbnail"),
+		"menu_position" => 21,
+		"menu_icon" => "dashicons-format-gallery",
+		"public"	=> true,
+		"show_in_menu"	=> true,
+	);
+	register_post_type("banners", $args_post);
+	
+	// Registering new Taxonomy
+	$labels_taxonomy = array( "name" => "Categorias dos Banners", "singular_name" => "Categoria do Banner");
+	$args_taxonomy = array(
+		"labels"	=> $labels_taxonomy,
+		"show_ui"	=> true,
+		"show_in_menu"	=> true,
+		"show_tagcloud"	=> false,
+		'show_admin_column' => true,
+		"hierarchical"	=> true,
+		"capabilities"	=> array("manage_terms", "edit_terms", "delete_terms", "assign_terms"),
+	);
+	register_taxonomy("banner-categorias", "banners", $args_taxonomy);
+	
+}
+
 
 /**
  * Register "footer" custom post type with "Categoria" custom taxonomy
@@ -201,7 +248,7 @@ function footerPostType() {
 	$args_post = array(
 		"labels" => $labels_post,
 		"supports" => array("title", "editor", "thumbnail"),
-		"menu_position" => 21,
+		"menu_position" => 22,
 		"menu_icon" => "dashicons-media-default",
 		"public"	=> true,
 		"show_in_menu"	=> true,

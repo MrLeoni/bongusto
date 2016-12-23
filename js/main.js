@@ -1,22 +1,27 @@
-$(document).ready(function() {
+/*!
+ * Bongusto Script v1.0.0
+ * Licensed ISC
+ */
+
+jQuery(document).ready(function() {
   
   /*--------------------------------
   // Mobile navigation engine
   --------------------------------*/
   
-  $("#js-mobile-btn").click(function() {
+  jQuery("#js-mobile-btn").click(function() {
     
     // Toggle class in #js-mobile-btn
     // When "active" is placed, the icon changes to a times icon and the navigation apears
-    $(this).toggleClass("active");
+    jQuery(this).toggleClass("active");
     
     // Creating a boolean variable to check if #js-mobile-btn has or not the "active" class
-    var btnHasClass = $(this).hasClass("active");
+    var btnHasClass = jQuery(this).hasClass("active");
     
     // Store elements in variables
-    var siteMenu = $(".site-menu");
-    var navMenu = $(".nav-links");
-    var navLinks = $(".js-navigation");
+    var siteMenu = jQuery(".site-menu");
+    var navMenu = jQuery(".nav-links");
+    var navLinks = jQuery(".js-navigation");
     
     if (btnHasClass) {
       // If #js-mobile-btn is active
@@ -24,10 +29,10 @@ $(document).ready(function() {
       // Check the device screen height, if is smaller than 460px, apply
       // height 100% to the header, this allow the user to scroll down
       // the menu.
-      if($(window).height() < 460) {
+      if(jQuery(window).height() < 460) {
         siteMenu.css("height", "100%");
         // Lock scroll on body when has scroll in the mani manu
-        $("body").addClass("not-scroll");
+        jQuery("body").addClass("not-scroll");
       }
       
       // Apply an animation to slide down the menu and when its is complete
@@ -50,7 +55,7 @@ $(document).ready(function() {
       });
       
       // Remove "scroll lock"
-      $("body").removeClass("not-scroll");
+      jQuery("body").removeClass("not-scroll");
     }
     
   });
@@ -79,9 +84,9 @@ $(document).ready(function() {
   	return size;
   }
   
-  $(".products-carrossel").bxSlider({
+  jQuery(".products-carrossel").bxSlider({
     pager: false,
-    slideWidth: itemWidth($(window).width()) /* Call function and pass window object width as a parameter */,
+    slideWidth: itemWidth(jQuery(window).width()) /* Call function and pass window object width as a parameter */,
     minSlides: 1,
     maxSlides: 4,
     moveSlides: 1,
@@ -90,14 +95,43 @@ $(document).ready(function() {
   
   
   /*--------------------------------
+  // Banner Slider
+  //
+  // Credit: bxSlider
+  --------------------------------*/
+  
+  jQuery('.banner-slider').bxSlider({
+  	controls: false,
+  	auto: true,
+  	speed: 800,
+  	pause: 7000,
+  	autoHover: true,
+  });
+  
+  /*--------------------------------
+  // Home About Slider
+  //
+  // Credit: bxSlider
+  --------------------------------*/
+  
+  jQuery('.about-img-slider').bxSlider({
+  	mode: 'fade',
+  	controls: false,
+  	auto: true,
+  	speed: 800,
+  	pause: 7000,
+  	autoHover: true
+  });
+  
+  /*--------------------------------
   // Parallax Engine
   //
   // Credit: Tableless
   --------------------------------*/
   
-  $('.parallax').each(function(){
-  	var $obj = $(this);
-  	var windowWidth = $(window).width();
+  jQuery('.parallax').each(function(){
+  	var jQueryobj = jQuery(this);
+  	var windowWidth = jQuery(window).width();
   	
   	// Apply parallax effect only in screens and devices with more than 1200px
   	if(windowWidth < 1200) {
@@ -106,21 +140,22 @@ $(document).ready(function() {
   		
   	} else {
   	
-	  	$(window).scroll(function() {
-	  		var yPos = -($(window).scrollTop() / $obj.data('speed')); 
+	  	jQuery(window).scroll(function() {
+	  		var yPos = -(jQuery(window).scrollTop() / jQueryobj.data('speed')); 
 	  		var bgpos = '50% '+ yPos + 'px';
-	  		$obj.css('background-position', bgpos );
+	  		jQueryobj.css('background-position', bgpos );
 	  	}); 
   	
   	}
   	
   });
   
+  
   /*--------------------------------
   // Print Recipes
   --------------------------------*/
   
-  $("#js-print").click(function() {
+  jQuery("#js-print").click(function() {
   	window.print();
   });
   
