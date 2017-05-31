@@ -34,7 +34,7 @@ get_header(); ?>
 				</section>
 				
 				<section id="map" class="map-box">
-					<iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJJWs1_4VMz5QRuGkp4IA78jI&key=AIzaSyACMUbYgasddo1ltLfEbChoJEmHsuVqQOk&zoom=15" allowfullscreen></iframe>
+					<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=R.%20Ant%C3%B4nia%20Martins%20Luiz%2C%20519%20Distrito%20Industrial%20Jo%C3%A3o%20Narezzi&key=AIzaSyACMUbYgasddo1ltLfEbChoJEmHsuVqQOk&zoom=15" allowfullscreen></iframe>
 				</section>
 				
 			</article>
